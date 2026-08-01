@@ -163,4 +163,26 @@
       vio.observe(video);
     }
   }
+
+  /* ---------- 访问次数统计（counterapi.dev，同会话不重复计数） ---------- */
+  const visitEl = document.getElementById("visit-count");
+  if (visitEl) {
+    const counted = sessionStorage.getItem("lixiang-counted");
+    const url = counted
+      ? "https://api.counterapi.dev/v1/lixiang-fun/visits"
+      : "https://api.counterapi.dev/v1/lixiang-fun/visits/up";
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data && typeof data.count !== "undefined") {
+          visitEl.textContent = Number(data.count).toLocaleString("en-US");
+          if (!counted) sessionStorage.setItem("lixiang-counted", "1");
+        } else {
+          visitEl.textContent = "—";
+        }
+      })
+      .catch(() => {
+        visitEl.textContent = "—";
+      });
+  }
 })();
