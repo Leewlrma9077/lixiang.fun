@@ -355,7 +355,7 @@ ul, ol { list-style: none; }
 /* ===================== 联系 ===================== */
 .contact-card { max-width: 860px; margin: 0 auto; padding: clamp(2rem, 5vw, 3.4rem); text-align: center; background: var(--glass-strong); }
 .contact-head { margin-bottom: 2rem; }
-.contact-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.4rem; }
+.contact-actions { display: flex; justify-content: center; gap: 1rem; margin-bottom: 1.4rem; }
 .contact-item { display: flex; align-items: center; gap: 14px; padding: 1.2rem 1.4rem; border-radius: var(--radius-sm); text-align: left; transition: transform 0.35s var(--ease); }
 .contact-item:hover { transform: translateY(-4px); }
 .contact-ico { width: 46px; height: 46px; flex-shrink: 0; border-radius: 14px; display: grid; place-items: center; background: var(--grad-soft); color: var(--ink); }
@@ -385,7 +385,7 @@ ul, ol { list-style: none; }
   .hero-text { text-align: center; }
   .hero-tagline { margin-left: auto; margin-right: auto; }
   .hero-actions, .hero-meta { justify-content: center; }
-  .about-grid, .skills-grid, .project-featured, .project-row, .awards-grid, .interest-grid, .contact-actions { grid-template-columns: 1fr; }
+  .about-grid, .skills-grid, .project-featured, .project-row, .awards-grid, .interest-grid { grid-template-columns: 1fr; }
   .awards-grid { grid-template-columns: 1fr 1fr; }
 }
 
